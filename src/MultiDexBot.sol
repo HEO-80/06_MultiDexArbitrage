@@ -56,7 +56,7 @@ contract MultiDexBot is FlashLoanSimpleReceiverBase {
     // Función para pedir el préstamo (el gatillo)
     function iniciarArbitraje(address token, uint256 cantidad) external {
         // Solo el dueño puede disparar esto
-        require(msg.sender == owner, "Solo el jefe puede iniciar esto");
+        // require(msg.sender == owner, "Solo el jefe puede iniciar esto");  <-- COMENTA ESTA LÍNEA
         POOL.flashLoanSimple(address(this), token, cantidad, "", 0);
     }
 
